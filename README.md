@@ -1,53 +1,71 @@
+# Digital Twin: Safety Control
 Main project's goal:
 
-Advanced Object Detection, Segmentation, and Depth 3D Analysis for Safety Applications on NVIDIA Jetson for a real-time monitoring and notification.
+> Advanced Object Detection, Segmentation, and Depth 3D Analysis for Safety Applications on NVIDIA Jetson for a real-time monitoring and notification.
 
-Phase 1: Getting Started with Jetson Firmware 
-Objective: Set up the NVIDIA Jetson platform for GPU-accelerated AI workflows.
 
-Jetson Environment Setup: Install JetPack SDK and Dependencies.
 
-Optimize OpenCV and PyTorch for GPU: Build OpenCV with CUDA Support and Install PyTorch for Jetson.
+---
 
-Deep Learning Frameworks and Tools: TensorRT Integration and DeepStream SDK.
+# Phase 1: Getting Started with Jetson Firmware
 
-Benchmarking and Profiling
+**Objective**: Set up the NVIDIA Jetson platform for GPU-accelerated AI workflows.
 
-**Performance Metrics** : Measure FPS, latency, and GPU utilization using tegrastats and jetson_stats.
-**Compare Models** : compare precision, accuracy, recall, mAP and track latency.
-Phase 2: Prepare the Detection Model 
-Objective: Develop an optimized object detection model for safety-critical scenarios.
+1. **Jetson Environment Setup**: Install JetPack SDK and Dependencies.
 
-Dataset Preparation: Data Collection and Annotation
+2. **Optimize OpenCV and PyTorch for GPU**: Build OpenCV with CUDA Support and Install PyTorch for Jetson.
 
-Model Training & Evaluation
+3. **Deep Learning Frameworks and Tools**: TensorRT Integration and DeepStream SDK.
 
-MLOps Pipeline
+4. **Benchmarking and Profiling**
 
-Optimization: Model Compression and TensorRT/ONNX conversion
+   * \*\*Performance Metrics\*\* : Measure FPS, latency, and GPU utilization using `tegrastats` and `jetson_stats`.
+   * \*\*Compare Models\*\* : compare precision, accuracy, recall, mAP and track latency.
 
-Phase 3: 3D Computer Vision Environment 
-Objective: Integrate depth sensing and 3D analysis for spatial safety.
+---
 
-ZED 2i Camera Setup: SDK Installation and Calibration.
+# Phase 2: Prepare the Detection Model
 
-3D Object Detection
+**Objective**: Develop an optimized object detection model for safety-critical scenarios.
 
-**Depth Integration**: Project 2D bounding boxes into 3D space using ZED’s depth maps.
-**Coordinate Systems**: Convert pixel coordinates to real-world distances (meters).
-Safety Distance Measurement: Calculate distances between workers (3D centroids) and machinery with dynamic threshold (<1.5m triggers alert).
+1. **Dataset Preparation**: Data Collection and Annotation
 
-Phase 4: Smart Alerting and Notifications 
-Objective: Build a real-time alerting system for safety violations.
+2. **Model Training & Evaluation**
 
-Scenario Design
+3. **MLOps Pipeline**
 
-Use Cases: Worker proximity to machinery, PPE detection, unauthorized zone entry.
-Architecture: Microservices: Detection → Rules Engine → Notification.
-Implementation
+4. **Optimization**: Model Compression and TensorRT/ONNX conversion
 
-Testing
+---
 
-Unit Tests: Validate alert triggers with synthetic data.
-Stress Test: Simulate 10+ concurrent safety breaches.
-Latency <1s for incident reports and alarms
+# Phase 3: 3D Computer Vision Environment
+
+**Objective**: Integrate depth sensing and 3D analysis for spatial safety.
+
+1. **ZED 2i Camera Setup**: SDK Installation and Calibration.
+
+2. **3D Object Detection**
+
+   * \*\*Depth Integration\*\*: Project 2D bounding boxes into 3D space using ZED’s depth maps.
+   * \*\*Coordinate Systems\*\*: Convert pixel coordinates to real-world distances (meters).
+
+3. **Safety Distance Measurement**: Calculate distances between workers (3D centroids) and machinery with dynamic threshold (\<1.5m triggers alert).
+
+---
+
+# Phase 4: Smart Alerting and Notifications
+
+**Objective**: Build a real-time alerting system for safety violations.
+
+1. **Scenario Design**
+
+   * **Use Cases**: Worker proximity to machinery, PPE detection, unauthorized zone entry.
+   * **Architecture**: Microservices: Detection → Rules Engine → Notification.
+
+2. **Implementation**
+
+3. **Testing**
+
+   * **Unit Tests**: Validate alert triggers with synthetic data.
+   * **Stress Test**: Simulate 10+ concurrent safety breaches.
+   * **Latency** \<1s for incident reports and alarms
